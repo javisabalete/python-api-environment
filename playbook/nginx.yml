@@ -1,0 +1,23 @@
+---
+- hosts: python-api
+  become: true 
+  become_method: su 
+  become_user: root
+  vars_files:
+    - ../extra_vars/python-api.yml
+  tasks:
+  - name: Start nginx
+    service:
+      name: nginx
+      state: started
+    tags: start
+  - name: Stop nginx
+    service:
+      name: nginx
+      state: stopped
+    tags: stop
+  - name: Reload nginx
+    service:
+      name: nginx
+      state: reloaded
+    tags: reloaded

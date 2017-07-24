@@ -1,0 +1,23 @@
+---
+- hosts: python-api
+  tasks:
+  - name: git pull
+    shell: |
+     cd /app
+     git pull
+    tags: pull
+    register: out
+  - name: git status
+    shell: |
+     cd /app
+     git status
+    tags: status
+    register: out
+  - name: git log
+    shell: |
+     cd /app
+     git log -3
+    tags: log
+    register: out
+  - debug: msg="{{ out.stdout_lines }}"
+    tags: status,pull,log

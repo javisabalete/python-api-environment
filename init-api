@@ -1,0 +1,4 @@
+#!/bin/bash
+git clone git@python-api:JaviSabalete/python-api.git /app
+chown -R 1000:1000 /app
+/usr/bin/supervisord

@@ -1,0 +1,33 @@
+version: '2.1'
+
+services:
+  python:
+    build: .
+    ports:
+      - "80:80"
+      - "22:22"
+    links:
+      - redis:redis
+    networks:
+      pythonapi:
+        ipv4_address: 172.16.1.100
+
+  redis:
+    image: redis
+    command: redis-server --appendonly yes
+    volumes:
+      - ./.redis:/data
+    networks:
+      pythonapi:
+        ipv4_address: 172.16.1.101
+
+networks:
+  pythonapi:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.1.0/24
+
+volumes:
+  .redis:
+    driver: local

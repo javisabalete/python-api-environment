@@ -1,0 +1,16 @@
+---
+- hosts: python-api
+  become: true 
+  become_method: su 
+  become_user: root
+  vars_files:
+    - ../extra_vars/python-api.yml
+  tasks:
+  - name: Start uwsgi
+    shell:
+      /usr/local/bin/uwsgi --ini /etc/uwsgi/uwsgi.ini --ini /app/uwsgi.ini &
+    tags: start
+  - name: Stop uwsgi
+    shell:
+      /usr/local/bin/uwsgi --stop /var/run/uwsgi.pid
+    tags: stop

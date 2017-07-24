@@ -1,0 +1,7 @@
+.idea
+.redis
+playbook/*.retry
+ansible
+ansible.pub
+git
+git.pub
