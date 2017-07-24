@@ -1,5 +1,5 @@
 # python-api-environtment
-Dockerized environment for 'python-api' repo
+Dockerized environment for 'python-api' repo to improve my ansible skills
 
 ## Install
 1. Clone repo.
