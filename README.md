@@ -1,11 +1,11 @@
-# python-api-environtment
+# python-api-environment
 Dockerized environment for 'python-api' repo to improve my ansible skills.
 
 ## Install
 1. Clone repo.
 
     ```bash
-    git clone https://github.com/JaviSabalete/python-api-environtment.git
+    git clone https://github.com/JaviSabalete/python-api-environment.git
     ```
 
 2. Generate key in order to use ansible.
