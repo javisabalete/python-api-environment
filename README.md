@@ -35,3 +35,23 @@ Dockerized environment for 'python-api' repo
     ```
 
 2. Access your app via [http://localhost/](http://localhost/).
+
+## How it works via ansible (examples)
+
+1. Try to ping
+
+    ```bash
+    ansible -i hosts/all -m ping python-api
+    ```
+
+2. Try to deploy
+
+    ```bash
+    ansible-playbook -i hosts/all playbook/git.yml --tag=pull
+    ```
+    
+3. Try to stop nginx
+
+    ```bash
+    ansible-playbook -i hosts/all playbook/nginx.yml --tag=stop
+    ```
